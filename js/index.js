@@ -8,6 +8,7 @@ let velocidade = 10;
 
 let alturaContainer = 500;
 let larguraContainer = 700;
+let alturaContainerDiv = 600;
 
 document.addEventListener("keydown",(e)=>{
     e.preventDefault();
@@ -26,8 +27,10 @@ document.addEventListener("keydown",(e)=>{
             personagemImg.classList.add("movimento","parabaixo");
             personagemImg.classList.remove("paracima","paraesquerda","paradireita");
             personagemY += velocidade;
-            if(personagemY >= alturaContainer - personagemAltura){
+            if(personagemY >= alturaContainer - personagemAltura && (personagemX !== 500 && personagemY !== 450)){
                 personagemY = alturaContainer - personagemAltura;
+            }else if(personagemY >= alturaContainerDiv - personagemAltura){
+                personagemY = alturaContainerDiv - personagemAltura; 
             }
             personagem.style.top = personagemY+"px";
         break;

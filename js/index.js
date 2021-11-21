@@ -9,9 +9,7 @@ let velocidade = 10;
 
 let alturaContainer = 500;
 let larguraContainer = 700;
-let alturaContainerDiv = 600;
 
-//Evento de clique em uma tecla
 document.addEventListener("keydown",(e)=>{
     e.preventDefault();
     let tecla = e.key;
@@ -54,8 +52,6 @@ document.addEventListener("keydown",(e)=>{
         break;
     }
 });
-
-//Evento de soltar uma tecla
 document.addEventListener("keyup",(e)=>{
     e.preventDefault();
 
@@ -69,5 +65,4 @@ document.addEventListener("keyup",(e)=>{
             personagemImg.classList.remove("movimento");
         break;
     }
-});
-
+}); 

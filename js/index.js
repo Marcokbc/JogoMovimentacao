@@ -1,3 +1,4 @@
+//Criação de variaveis
 let personagem = document.querySelector("#personagem");
 let personagemImg = document.querySelector("#personagem img");
 let personagemX = 200; //Posicionamento horizontal
@@ -10,6 +11,7 @@ let alturaContainer = 500;
 let larguraContainer = 700;
 let alturaContainerDiv = 600;
 
+//Evento de clique em uma tecla
 document.addEventListener("keydown",(e)=>{
     e.preventDefault();
     let tecla = e.key;
@@ -27,10 +29,8 @@ document.addEventListener("keydown",(e)=>{
             personagemImg.classList.add("movimento","parabaixo");
             personagemImg.classList.remove("paracima","paraesquerda","paradireita");
             personagemY += velocidade;
-            if(personagemY >= alturaContainer - personagemAltura && (personagemX !== 500 && personagemY !== 450)){
+            if(personagemY >= alturaContainer - personagemAltura){
                 personagemY = alturaContainer - personagemAltura;
-            }else if(personagemY >= alturaContainerDiv - personagemAltura){
-                personagemY = alturaContainerDiv - personagemAltura; 
             }
             personagem.style.top = personagemY+"px";
         break;
@@ -54,6 +54,8 @@ document.addEventListener("keydown",(e)=>{
         break;
     }
 });
+
+//Evento de soltar uma tecla
 document.addEventListener("keyup",(e)=>{
     e.preventDefault();
 
